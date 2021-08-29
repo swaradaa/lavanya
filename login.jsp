@@ -11,7 +11,7 @@ String userid=request.getParameter("userid");
 session.putValue("userid",userid);
 String passwor=request.getParameter("passwor");
 Class.forName("com.mysql.jdbc.Driver");
-java.sql.Connection con = DriverManager.getConnection("jdbc:mysql://localhost:5433/postgres","lavanya_users","root123");
+java.sql.Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5433/postgres","lavanya_users","root123");
 Statement st= con.createStatement();
 ResultSet rs=st.executeQuery("select * from customers where userid='"+userid+"' and passwor='"+passwor+"'");
 try{
